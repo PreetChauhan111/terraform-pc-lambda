@@ -23,7 +23,7 @@ module "lambda" {
   cloudwatch_logs_log_group_class              = var.cloudwatch_logs_log_group_class
   cloudwatch_logs_retention_in_days            = var.cloudwatch_logs_retention_in_days
   cloudwatch_logs_skip_destroy                 = var.cloudwatch_logs_skip_destroy
-  cloudwatch_logs_tags                         = local.cloudwatch_logs_tags
+  cloudwatch_logs_tags                         = var.cloudwatch_logs_tags
   code_signing_config_arn                      = var.code_signing_config_arn
   compatible_architectures                     = var.compatible_architectures
   compatible_runtimes                          = var.compatible_runtimes
@@ -59,8 +59,8 @@ module "lambda" {
   event_source_mapping                         = var.event_source_mapping
   file_system_arn                              = var.file_system_arn
   file_system_local_mount_path                 = var.file_system_local_mount_path
-  function_name                                = local.function_name
-  function_tags                                = local.function_tags
+  function_name                                = var.function_name
+  function_tags                                = var.function_tags
   handler                                      = var.handler
   hash_extra                                   = var.hash_extra
   ignore_source_code_hash                      = var.ignore_source_code_hash
@@ -75,7 +75,7 @@ module "lambda" {
   lambda_at_edge                               = var.lambda_at_edge
   lambda_at_edge_logs_all_regions              = var.lambda_at_edge_logs_all_regions
   lambda_role                                  = var.lambda_role
-  layer_name                                   = local.layer_name
+  layer_name                                   = var.layer_name
   layer_skip_destroy                           = var.layer_skip_destroy
   layers                                       = var.layers
   license_info                                 = var.license_info
@@ -94,7 +94,7 @@ module "lambda" {
   policy                                       = var.policy
   policy_json                                  = var.policy_json
   policy_jsons                                 = var.policy_jsons
-  policy_name                                  = local.policy_name
+  policy_name                                  = var.policy_name
   policy_statements                            = var.policy_statements
   provisioned_concurrent_executions            = var.provisioned_concurrent_executions
   publish                                      = var.publish
@@ -108,10 +108,10 @@ module "lambda" {
   role_description                             = var.role_description
   role_force_detach_policies                   = var.role_force_detach_policies
   role_maximum_session_duration                = var.role_maximum_session_duration
-  role_name                                    = local.role_name
+  role_name                                    = var.role_name
   role_path                                    = var.role_path
   role_permissions_boundary                    = var.role_permissions_boundary
-  role_tags                                    = local.role_tags
+  role_tags                                    = var.role_tags
   runtime                                      = var.runtime
   s3_acl                                       = var.s3_acl
   s3_bucket                                    = var.s3_bucket
@@ -127,7 +127,7 @@ module "lambda" {
   snap_start                                   = var.snap_start
   source_path                                  = var.source_path
   store_on_s3                                  = var.store_on_s3
-  tags                                         = local.tags
+  tags                                         = var.tags
   tenant_isolation_mode                        = var.tenant_isolation_mode
   timeout                                      = var.timeout
   timeouts                                     = var.timeouts
