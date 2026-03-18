@@ -871,8 +871,3 @@ variable "durable_config_retention_period" {
   type        = number
   default     = null
 }
-
-variable "environment" {
-  type    = string
-  default = "dev"
-}
